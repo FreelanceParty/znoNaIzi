@@ -9,9 +9,9 @@ use Illuminate\Database\Eloquent\Model;
  * Class Subject
  * @property int      $id
  * @property string   $title
- * @property int|NULL $numberInOrder
- * @property Carbon   $createdAt
- * @property Carbon   $updatedAt
+ * @property int|NULL $number_in_order
+ * @property Carbon   $created_at
+ * @property Carbon   $updated_at
  * @package App\Models
  * @method static where(string $column, string $operator, string $value)
  */
@@ -43,7 +43,7 @@ class Subject extends Model
     /*** @return int|NULL */
     public function getNumberInOrder(): ?int
     {
-        return $this->numberInOrder;
+        return $this->number_in_order;
     }
 
     /**
