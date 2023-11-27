@@ -2,7 +2,6 @@
 
 namespace App\Console\Commands;
 
-use App\Models\Subject;
 use Illuminate\Console\Command;
 
 /**
