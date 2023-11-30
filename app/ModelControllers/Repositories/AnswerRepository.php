@@ -18,11 +18,11 @@ class AnswerRepository
      */
     public function findById(int $id): Answer
     {
-        $subject = Answer::where("id", "=", $id)->first();
-        if ($subject === NULL) {
+        $answer = Answer::where("id", "=", $id)->first();
+        if ($answer === NULL) {
             throw new AnswerNotFoundException();
         }
-        return $subject;
+        return $answer;
     }
 
 }

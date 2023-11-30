@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Carbon\Carbon;
+use
+    Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * Class Answer
@@ -19,7 +21,11 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Answer extends Model
 {
-    // TODO add question: BelongsTo
+    /*** @return BelongsTo */
+    public function question()
+    {
+        return $this->belongsTo(Question::class, 'question_id');
+    }
 
     /*** @return int */
     public function getId(): int

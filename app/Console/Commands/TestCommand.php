@@ -2,6 +2,11 @@
 
 namespace App\Console\Commands;
 
+use App\ModelControllers\Repositories\QuestionRepository;
+use App\ModelControllers\Repositories\TopicRepository;
+use App\ModelControllers\TopicController;
+use App\Models\Question;
+use App\Models\Topic;
 use Illuminate\Console\Command;
 
 /**
