@@ -2,6 +2,7 @@
 
 use App\ModelControllers\AnswerController;
 use App\ModelControllers\SubjectController;
+use App\ModelControllers\TestController;
 use App\ModelControllers\TopicController;
 use App\ModelControllers\QuestionController;
 
@@ -30,5 +31,11 @@ if (!function_exists('questionController')) {
     function questionController(): QuestionController
     {
         return app('QuestionController');
+    }
+}
+if (!function_exists('testController')) {
+    function testController(): TestController
+    {
+        return app('TestController');
     }
 }

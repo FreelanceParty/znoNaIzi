@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\ModelControllers\AnswerController;
 use App\ModelControllers\QuestionController;
 use App\ModelControllers\SubjectController;
+use App\ModelControllers\TestController;
 use App\ModelControllers\TopicController;
 use App\Models\Question;
 use Illuminate\Support\ServiceProvider;
@@ -26,6 +27,7 @@ class ControllerServiceProvider extends ServiceProvider
         $this->app->alias(TopicController::class, 'TopicController');
         $this->app->singleton(QuestionController::class, 'QuestionController');
         $this->app->alias(QuestionController::class, 'QuestionController');
-
+        $this->app->singleton(TestController::class, 'TestController');
+        $this->app->alias(TestController::class, 'TestController');
     }
 }

@@ -4,63 +4,68 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /***
  *Class Question
- * @property int                 $id
- * @property string              $text
- * @property int                 $test_id
- * @property int|NULL            $number_in_order
- * @property Carbon              $created_at
- * @property Carbon              $updated_at
+ * @property int      $id
+ * @property string   $text
+ * @property int      $test_id
+ * @property int|NULL $number_in_order
+ * @property Carbon   $created_at
+ * @property Carbon   $updated_at
  * @package App\Models
  * @method static where(string $column, string $operator, string $value)
  */
-// TODO add test: BelongsTo
-
 class Question extends Model
 {
 
-    /*** @return HasMany */
-    public function answers()
-    {
-        return $this->hasMany(Answer::class, 'question_id');
-    }
+	/*** @return HasMany */
+	public function answers(): HasMany
+	{
+		return $this->hasMany(Answer::class);
+	}
 
-    /**@return int */
-    public function getId(): int
-    {
-        return $this->id;
-    }
+	/*** @return BelongsTo */
+	public function test(): BelongsTo
+	{
+		return $this->belongsTo(Test::class);
+	}
 
-    /*** @return string */
-    public function getText(): string
-    {
-        return $this->text;
-    }
+	/**@return int */
+	public function getId(): int
+	{
+		return $this->id;
+	}
 
-    /**
-     * @param string $text
-     * @return void
-     */
-    public function setText(string $text): void
-    {
-        $this->text = $text;
-    }
+	/*** @return string */
+	public function getText(): string
+	{
+		return $this->text;
+	}
 
-    /*** @return int|null */
-    public function getNumberInOrder(): ?int
-    {
-        return $this->number_in_order;
-    }
+	/**
+	 * @param string $text
+	 * @return void
+	 */
+	public function setText(string $text): void
+	{
+		$this->text = $text;
+	}
 
-    /**
-     * @param int|null $number_in_order
-     * @return void
-     */
-    public function setNumberInOrder(?int $number_in_order): void
-    {
-        $this->number_in_order = $number_in_order;
-    }
+	/*** @return int|null */
+	public function getNumberInOrder(): ?int
+	{
+		return $this->number_in_order;
+	}
+
+	/**
+	 * @param int|null $number_in_order
+	 * @return void
+	 */
+	public function setNumberInOrder(?int $number_in_order): void
+	{
+		$this->number_in_order = $number_in_order;
+	}
 }
