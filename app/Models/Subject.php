@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -17,7 +18,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Subject extends Model
 {
-    // TODO: add chapters: HasMany
+        // TODO: add chapters: HasMany
+    use HasFactory;
 
     /*** @return int */
     public function getId(): int
