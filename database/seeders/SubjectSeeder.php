@@ -8,6 +8,7 @@ use Illuminate\Database\Seeder;
 
 class SubjectSeeder extends Seeder
 {
+    /*** Run the database seeds.*/
     public function run(): void
     {
         Subject::factory()->count(10)->create();
