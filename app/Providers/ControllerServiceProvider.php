@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\ModelControllers\AnswerController;
+use App\ModelControllers\ChapterController;
 use App\ModelControllers\QuestionController;
 use App\ModelControllers\SubjectController;
 use App\ModelControllers\TestController;
@@ -29,5 +30,7 @@ class ControllerServiceProvider extends ServiceProvider
         $this->app->alias(QuestionController::class, 'QuestionController');
         $this->app->singleton(TestController::class, 'TestController');
         $this->app->alias(TestController::class, 'TestController');
+        $this->app->singleton(ChapterController::class, 'ChapterController');
+        $this->app->alias(ChapterController::class, 'ChapterController');
     }
 }

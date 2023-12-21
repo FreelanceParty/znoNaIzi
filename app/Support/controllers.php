@@ -1,6 +1,7 @@
 <?php
 
 use App\ModelControllers\AnswerController;
+use App\ModelControllers\ChapterController;
 use App\ModelControllers\SubjectController;
 use App\ModelControllers\TestController;
 use App\ModelControllers\TopicController;
@@ -37,5 +38,13 @@ if (!function_exists('testController')) {
     function testController(): TestController
     {
         return app('TestController');
+
+    }
+
+    if (!function_exists('chapterController')) {
+        function chapterController(): ChapterController
+        {
+            return app('ChapterController');
+        }
     }
 }

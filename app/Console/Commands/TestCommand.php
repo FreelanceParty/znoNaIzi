@@ -2,6 +2,8 @@
 
 namespace App\Console\Commands;
 
+use App\ModelControllers\Repositories\ChapterRepository;
+use App\Models\Chapter;
 use Illuminate\Console\Command;
 
 /**
