@@ -2,11 +2,8 @@
 
 namespace App\ModelControllers;
 
-use App\Exceptions\AnswerNotFoundException;
 use App\Exceptions\QuestionNotFoundException;
-use App\ModelControllers\Repositories\AnswerRepository;
 use App\ModelControllers\Repositories\QuestionRepository;
-use App\Models\Answer;
 use App\Models\Question;
 
 /**

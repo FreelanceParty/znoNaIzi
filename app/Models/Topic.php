@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 
 /**
@@ -19,6 +20,11 @@ use Illuminate\Support\Carbon;
  */
 class Topic extends Model
 {
+	/*** @return BelongsTo */
+	public function chapter(): BelongsTo
+	{
+		return $this->belongsTo(Chapter::class);
+	}
     /*** @return int */
     public function getId(): int
     {

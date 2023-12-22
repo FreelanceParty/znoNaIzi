@@ -12,7 +12,12 @@ use App\Models\Chapter;
 class ChapterRepository
 {
 
-    public function findById(int $id): Chapter
+	/**
+	 * @param int $id
+	 * @return Chapter
+	 * @throws ChapterNotFoundException
+	 */
+	public function findById(int $id): Chapter
     {
         $chapter = Chapter::where("id", "=", $id)->first();
         if ($chapter === NULL) {
@@ -21,7 +26,12 @@ class ChapterRepository
         return $chapter;
     }
 
-    public function findByTitle(string $title): Chapter
+	/**
+	 * @param string $title
+	 * @return Chapter
+	 * @throws ChapterNotFoundException
+	 */
+	public function findByTitle(string $title): Chapter
     {
         $chapter = Chapter::where("title", "=", $title)->first();
         if ($chapter === NULL) {
@@ -29,5 +39,4 @@ class ChapterRepository
         }
         return $chapter;
     }
-
 }

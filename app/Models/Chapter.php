@@ -3,16 +3,15 @@
 namespace App\Models;
 
 use Carbon\Carbon;
-use http\Encoding\Stream;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * class Chapter
  * @property int      $id
  * @property string   $title
  * @property int      $subject_id
- * @property Subject  $subject
  * @property int|NULL $number_in_order
  * @property Carbon   $created_at
  * @property Carbon   $updated_at
@@ -23,8 +22,13 @@ class Chapter extends Model
 {
     /*** @return BelongsTo */
     public function subject(): BelongsTo{
-        return $this->belongsTo(Chapter::class);
+        return $this->belongsTo(Subject::class);
     }
+
+	/**** @return HasMany */
+	public function topics(): HasMany{
+		return $this->hasMany(Topic::class);
+	}
 
     /*** @return int */
     public function getId(): int
@@ -60,21 +64,6 @@ class Chapter extends Model
     public function setSubjectId(int $subject_id): void
     {
         $this->subject_id = $subject_id;
-    }
-
-    /*** @return Subject */
-    public function getSubject(): Subject
-    {
-        return $this->subject;
-    }
-
-    /**
-     * @param Subject $subject
-     * @return void
-     */
-    public function setSubject(Subject $subject): void
-    {
-        $this->subject = $subject;
     }
 
     /*** @return int|null */

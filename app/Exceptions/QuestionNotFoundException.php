@@ -10,5 +10,6 @@ use Exception;
  */
 class QuestionNotFoundException extends Exception
 {
-    protected $message = 'Question Not Found';
+	/*** @var string */
+	protected $message = 'Question Not Found';
 }

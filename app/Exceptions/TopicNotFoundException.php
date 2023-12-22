@@ -10,7 +10,6 @@ use Exception;
  */
 class TopicNotFoundException extends Exception
 {
-
     /*** @var string */
     protected $message = 'Topic Not Found';
 }

@@ -4,7 +4,12 @@ namespace App\Exceptions;
 
 use Exception;
 
+/**
+ * Class ChapterNotFoundException
+ * @package App\Exceptions
+ */
 class ChapterNotFoundException extends Exception
 {
-    protected $message = "Chapter Not Found";
+	/*** @var string */
+	protected $message = "Chapter Not Found";
 }

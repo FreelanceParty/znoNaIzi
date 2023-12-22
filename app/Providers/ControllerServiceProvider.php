@@ -6,9 +6,7 @@ use App\ModelControllers\AnswerController;
 use App\ModelControllers\ChapterController;
 use App\ModelControllers\QuestionController;
 use App\ModelControllers\SubjectController;
-use App\ModelControllers\TestController;
 use App\ModelControllers\TopicController;
-use App\Models\Question;
 use Illuminate\Support\ServiceProvider;
 
 /**

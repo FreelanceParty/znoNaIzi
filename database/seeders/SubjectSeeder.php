@@ -3,9 +3,12 @@
 namespace Database\Seeders;
 
 use App\Models\Subject;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+/**
+ * Class SubjectSeeder
+ * @package Database\Seeders
+ */
 class SubjectSeeder extends Seeder
 {
     /*** Run the database seeds.*/
