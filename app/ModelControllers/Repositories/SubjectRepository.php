@@ -4,6 +4,7 @@ namespace App\ModelControllers\Repositories;
 
 use App\Exceptions\SubjectNotFoundException;
 use App\Models\Subject;
+use Illuminate\Database\Eloquent\Collection;
 
 /**
  * Class SubjectRepository
@@ -38,4 +39,10 @@ class SubjectRepository
         }
         return $subject;
     }
+
+	/*** @return Collection */
+	public function getAll(): Collection
+	{
+		return Subject::all();
+	}
 }

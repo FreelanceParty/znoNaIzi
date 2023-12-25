@@ -5,6 +5,7 @@ namespace App\ModelControllers;
 use App\Exceptions\SubjectNotFoundException;
 use App\ModelControllers\Repositories\SubjectRepository;
 use App\Models\Subject;
+use Illuminate\Database\Eloquent\Collection;
 
 /**
  * Class SubjectController
@@ -40,5 +41,11 @@ class SubjectController
     {
         return $this->repo->findByTitle($title);
     }
+
+	/*** @return Collection */
+	public function getAll(): Collection
+	{
+		return $this->repo->getAll();
+	}
 
 }

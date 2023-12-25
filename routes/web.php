@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SubjectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +13,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', static function () {
-    return view('welcome');
+Route::get('/', static function() {
+	return view('welcome');
+});
+Route::group(['prefix' => '/subjects'], static function() {
+	Route::get('/', [SubjectController::class, 'index'])->name('subjects-index');
 });
