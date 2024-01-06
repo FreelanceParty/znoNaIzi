@@ -18,4 +18,5 @@ Route::get('/', static function() {
 });
 Route::group(['prefix' => '/subjects'], static function() {
 	Route::get('/', [SubjectController::class, 'index'])->name('subjects-index');
+    Route::get('/card', [SubjectController::class, 'card'])->name('subject-card');
 });

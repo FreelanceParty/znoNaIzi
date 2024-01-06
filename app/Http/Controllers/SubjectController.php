@@ -17,4 +17,8 @@ class SubjectController extends Controller
 	{
 		return view('subjects.subject_list', ['subjects' => subjectController()->getAll()]);
 	}
+    public function card()
+    {
+        return view('subjects.subject_card', ['subjects' => subjectController()->getAll()]);
+    }
 }
